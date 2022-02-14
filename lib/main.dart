@@ -26,12 +26,14 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: HelloWorld(),
+      home: const HelloWorld(),
     );
   }
 }
 
 class HelloWorld extends StatefulWidget {
+  const HelloWorld({Key? key}) : super(key: key);
+
   @override
   _HelloWorldState createState() => _HelloWorldState();
 }
@@ -63,8 +65,8 @@ class _HelloWorldState extends State<HelloWorld> {
   }
 
   void _addSphere(ArCoreController controller) {
-    final material = ArCoreMaterial(
-        color: Color.fromARGB(120, 66, 134, 244));
+    final material =
+        ArCoreMaterial(color: const Color.fromARGB(120, 66, 134, 244));
     final sphere = ArCoreSphere(
       materials: [material],
       radius: 0.1,
@@ -95,7 +97,7 @@ class _HelloWorldState extends State<HelloWorld> {
 
   void _addCube(ArCoreController controller) {
     final material = ArCoreMaterial(
-      color: Color.fromARGB(120, 66, 134, 244),
+      color: const Color.fromARGB(120, 66, 134, 244),
       metallic: 1.0,
     );
     final cube = ArCoreCube(
